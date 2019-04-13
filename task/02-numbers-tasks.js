@@ -68,6 +68,7 @@ function getAverage(value1, value2) {
     }
 }
 
+
 /**
  * Returns a distance beetween two points by cartesian coordinates.
  *
@@ -96,6 +97,7 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
     }
         
     
+
 }
 
 /**
@@ -223,20 +225,27 @@ function roundToPowerOfTen(num, pow) {
         var str=String(num);
         var LastNumber=Number.parseFloat(str[3]);
         if (LastNumber<5){return num-LastNumber}
-        else{num+(10-LastNumber);}
-        }
+        else{return num+(10-LastNumber);}
     }
-    if (pow==2){
+    else if (pow==2){
         //if(num[2]<5){return num-num[2];
         var str=String(num);
-        //var str2=str[2]+str[3];
-        //var LastNumber=Number.parseFloat(str2);
+        var str2=str[2]+str[3];
+        var LastNumber=Number.parseFloat(str2);
         //var PreLastNumber=Number.parseFloat(str[2]);
-        /*if (PreLastNumber<5){return num-LastNumber}
-        else{num+(100-LastNumber);}*/
-        return str;
+        if (LastNumber<50){return num-LastNumber;}
+        else{return num+(100-LastNumber);}
+        //return LastNumber;
     }
-
+    else if(pow==3){
+        var str=String(num);
+        var str2=str[1]+str[2]+str[3];
+        var LastNumber=Number.parseFloat(str2);
+        if (LastNumber<500){return num-LastNumber;}
+        else{return num+(1000-LastNumber);}
+        //return LastNumber;
+    }
+}
 
 /**
  * Returns true is the number is prime; otherwise false.
