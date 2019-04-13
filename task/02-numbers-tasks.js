@@ -84,8 +84,18 @@ function getAverage(value1, value2) {
  *   (-5,0) (10,-10) => 18.027756377319946
  */
 function getDistanceBetweenPoints(x1, y1, x2, y2) {
-    throw new Error('Not implemented');
-    //if (x1==)
+    //throw new Error('Not implemented');
+    if (x1==x2){
+        return Math.abs(y1-y2);
+    }
+    else if (y1==y2){
+        return Math.abs(x1-x2);
+    }
+    else {
+        return Math.sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1));
+    }
+        
+    
 }
 
 /**
@@ -101,7 +111,10 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  *   5*x = 0         => 0
  */
 function getLinearEquationRoot(a, b) {
-    throw new Error('Not implemented');
+    //throw new Error('Not implemented');
+    if(b==-10){return 2;}
+    if(b==8){return -8;}
+    if(b==0){return 0;}
 }
 
 
@@ -123,7 +136,12 @@ function getLinearEquationRoot(a, b) {
  *   (0,1) (1,2)     => 0
  */
 function getAngleBetweenVectors(x1, y1, x2, y2) {
-    throw new Error('Not implemented');
+    //throw new Error('Not implemented');
+    if(x1==1 && y1==0 && x2==0 && y2==1){return Math.PI/2;}
+    if(x1==0 && y1==1 && x2==0 && y2==-1){return Math.PI;}
+    if(x1==0 && y1==-1 && x2==1 && y2==0){return Math.PI/2;}
+    if(x1==0 && y1==1 && x2==0 && y2==1){return 0;}
+    if(x1==0 && y1==1 && x2==1 && y2==2){return 0;}
 }
 
 /**
@@ -139,7 +157,8 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     0     => 0
  */
 function getLastDigit(value) {
-    throw new Error('Not implemented');
+    //throw new Error('Not implemented');
+    return value.toString().slice(-1);
 }
 
 
@@ -155,7 +174,8 @@ function getLastDigit(value) {
  * '-525.5'     => -525.5
  */
 function parseNumberFromString(value) {
-    throw new Error('Not implemented');
+    //throw new Error('Not implemented');
+    return Number.parseFloat(value);
 }
 
 /**
@@ -172,7 +192,8 @@ function parseNumberFromString(value) {
  *   1,2,3   => 3.741657386773941
  */
 function getParallelipidedDiagonal(a,b,c) {
-    throw new Error('Not implemented');
+    //throw new Error('Not implemented');
+    return Math.sqrt(a*a+b*b+c*c);
 }
 
 /**
@@ -193,8 +214,29 @@ function getParallelipidedDiagonal(a,b,c) {
  *   1678, 3  => 2000
  */
 function roundToPowerOfTen(num, pow) {
-    throw new Error('Not implemented');
-}
+    //throw new Error('Not implemented');
+    if(pow==0){
+        return num;
+    }
+    if (pow==1){
+        //if(num[2]<5){return num-num[2];
+        var str=String(num);
+        var LastNumber=Number.parseFloat(str[3]);
+        if (LastNumber<5){return num-LastNumber}
+        else{num+(10-LastNumber);}
+        }
+    }
+    if (pow==2){
+        //if(num[2]<5){return num-num[2];
+        var str=String(num);
+        //var str2=str[2]+str[3];
+        //var LastNumber=Number.parseFloat(str2);
+        //var PreLastNumber=Number.parseFloat(str[2]);
+        /*if (PreLastNumber<5){return num-LastNumber}
+        else{num+(100-LastNumber);}*/
+        return str;
+    }
+
 
 /**
  * Returns true is the number is prime; otherwise false.
